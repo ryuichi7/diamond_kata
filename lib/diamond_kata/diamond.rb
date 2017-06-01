@@ -1,6 +1,7 @@
+require 'pry'
 module DiamondKata
-  class TableBuilder
-    attr_reader :letters, :row_template, :table
+  class Diamond
+    attr_accessor :table, :letters, :row_template
 
     def initialize(letter)
       @letters = [*'A'..letter.upcase]
@@ -8,16 +9,20 @@ module DiamondKata
       @table = []
     end
 
-    def call
-      generate_rows
-      table
+    def print
+      generate_table
+      print_table
     end
 
     private
 
+    def print_table
+      table.map { |row| p row.join('') }
+    end
+
     # reverse letters to start with center row. then build out diamond
     # from center
-    def generate_rows
+    def generate_table
       letters.reverse.each_with_index do |letter, index|
         row = build_row(letter, index)
         table << row
