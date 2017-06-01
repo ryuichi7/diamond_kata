@@ -48,7 +48,7 @@ RSpec.describe DiamondKata::Diamond do
 
   describe '#print' do
     context 'when letter is "A"' do
-      it 'returns correct array' do
+      it 'prints correct output' do
         expect { diamond.print }.to output("\"A\"\n").to_stdout
       end
     end
@@ -60,7 +60,7 @@ RSpec.describe DiamondKata::Diamond do
         "\"_A_\"\n\"B_B\"\n\"_A_\"\n"
       end
 
-      it 'returns correct array' do
+      it 'prints correct output' do
         expect { diamond.print }.to output(expectation).to_stdout
       end
     end
@@ -72,7 +72,7 @@ RSpec.describe DiamondKata::Diamond do
         "\"__A__\"\n\"_B_B_\"\n\"C___C\"\n\"_B_B_\"\n\"__A__\"\n"
       end
 
-      it 'returns correct array' do
+      it 'prints correct output' do
         expect { diamond.print }.to output(expectation).to_stdout
       end
     end
