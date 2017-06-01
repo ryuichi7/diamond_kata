@@ -58,9 +58,9 @@ RSpec.describe DiamondKata::TableBuilder do
 
       let(:expectation) do
         [
-          ["A"],
-          ["B","_", "B"],
-          ["A"]
+          ['_', 'A', '_'],
+          ['B', '_', 'B'],
+          ['_', 'A', '_']
         ]
       end
 
@@ -74,11 +74,11 @@ RSpec.describe DiamondKata::TableBuilder do
 
       let(:expectation) do
         [
-          ["A"],
-          [ "B","_", "B"],
-          ["C", "_", "_", "_", "B"],
-          ["B","_", "B"],
-          ["A"]
+          ['_', '_', 'A', '_', '_'],
+          ['_', 'B', '_', 'B', '_'],
+          ['C', '_', '_', '_', 'C'],
+          ['_', 'B', '_', 'B', '_'],
+          ['_', '_', 'A', '_', '_'],
         ]
       end
 
