@@ -1,10 +1,9 @@
 require 'spec_helper'
 
 RSpec.describe DiamondKata::TableBuilder do
+  let(:table_builder) { described_class.new('A') }
 
   describe 'initialize' do
-    let(:table_builder) { described_class.new('A') }
-
     it 'assigns @table' do
       expect(table_builder.table).to eq []
     end
@@ -35,6 +34,56 @@ RSpec.describe DiamondKata::TableBuilder do
         it 'creates alphabet array to letter' do
           expect(table_builder.letters).to eq ['A', 'B', 'C', 'D']
         end
+      end
+
+      context 'when letter is lower case' do
+        let(:table_builder) { described_class.new('c') }
+
+        it 'upcases all letters' do
+          expect(table_builder.letters).to eq ['A', 'B', 'C']
+        end
+      end
+    end
+  end
+
+  describe '#call' do
+    context 'when letter is "A"' do
+      it 'returns correct array' do
+        expect(table_builder.call).to eq([['A']])
+      end
+    end
+
+    context 'when letter is "B"' do
+      let(:table_builder) { described_class.new('B') }
+
+      let(:expectation) do
+        [
+          ["A"],
+          ["B","_", "B"],
+          ["A"]
+        ]
+      end
+
+      it 'returns correct array' do
+        expect(table_builder.call).to eq expectation
+      end
+    end
+
+    context 'when letter is "C"' do
+      let(:table_builder) { described_class.new('C') }
+
+      let(:expectation) do
+        [
+          ["A"],
+          [ "B","_", "B"],
+          ["C", "_", "_", "_", "B"],
+          ["B","_", "B"],
+          ["A"]
+        ]
+      end
+
+      it 'returns correct array' do
+        expect(table_builder.call).to eq expectation
       end
     end
   end

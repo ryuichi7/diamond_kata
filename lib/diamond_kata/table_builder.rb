@@ -7,5 +7,8 @@ module DiamondKata
       @row_template = Array.new(@letters.length, '_')
       @table = []
     end
+
+    def call
+    end
   end
 end
