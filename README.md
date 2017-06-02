@@ -22,8 +22,18 @@ and so on...
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Clone the repo
 
-```ruby
-gem 'diamond_kata'
+run:
+
 ```
+rake install
+```
+
+run:
+
+```
+diamond_kata
+```
+
+in the command line to start
