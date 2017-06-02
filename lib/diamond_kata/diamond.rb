@@ -1,4 +1,3 @@
-require 'pry'
 module DiamondKata
   class Diamond
     attr_accessor :table, :letters, :row_template
