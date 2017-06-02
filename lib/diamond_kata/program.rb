@@ -1,6 +1,6 @@
 module DiamondKata
   class Program
-    GREETING_PROMPT = 'please enter a letter or enter "exit" to leave'.freeze
+    GREETING_PROMPT = "please enter a letter or enter 'exit' to leave".freeze
     ERROR_MESSAGE = 'not a valid input'.freeze
     LEAVE_MESSAGE = 'goodbye'.freeze
 
